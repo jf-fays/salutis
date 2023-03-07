@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_03_07_163851) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +20,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_163851) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["patient_id"], name: "index_chatrooms_on_patient_id"
+  end
+
+  create_table "consultations", force: :cascade do |t|
+    t.date "date"
+    t.bigint "user_id", null: false
+    t.bigint "patient_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_consultations_on_patient_id"
+    t.index ["user_id"], name: "index_consultations_on_user_id"
   end
 
   create_table "daily_takes", force: :cascade do |t|
@@ -84,4 +95,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_163851) do
   add_foreign_key "chatrooms", "patients"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "consultations", "patients"
+  add_foreign_key "consultations", "users"
 end
