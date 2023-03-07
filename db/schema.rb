@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_174416) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_175913) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -75,6 +75,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_174416) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "prescription_daily_takes", force: :cascade do |t|
+    t.bigint "daily_take_id", null: false
+    t.bigint "prescription_medicine_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["daily_take_id"], name: "index_prescription_daily_takes_on_daily_take_id"
+    t.index ["prescription_medicine_id"], name: "index_prescription_daily_takes_on_prescription_medicine_id"
+  end
+
   create_table "prescription_medicines", force: :cascade do |t|
     t.integer "duration"
     t.string "dosage"
@@ -121,6 +130,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_174416) do
   add_foreign_key "consultations", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "prescription_daily_takes", "daily_takes"
+  add_foreign_key "prescription_daily_takes", "prescription_medicines"
   add_foreign_key "prescription_medicines", "medical_procedures"
   add_foreign_key "prescription_medicines", "medicines"
   add_foreign_key "prescription_medicines", "prescriptions"
