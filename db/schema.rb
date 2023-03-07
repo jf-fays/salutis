@@ -14,6 +14,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_154328) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "daily_takes", force: :cascade do |t|
+    t.string "day"
+    t.string "day_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "medical_procedures", force: :cascade do |t|
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "medicines", force: :cascade do |t|
+    t.string "name"
+    t.string "NR"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "chatrooms", force: :cascade do |t|
     t.bigint "patient_id", null: false
     t.datetime "created_at", null: false

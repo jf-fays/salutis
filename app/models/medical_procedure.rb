@@ -1,0 +1,2 @@
+class MedicalProcedure < ApplicationRecord
+end
