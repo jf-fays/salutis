@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :email, format: { with: /\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+/, message: "Format invalide" }
   validates :password, length: { minimum: 6 }
-  validates :password, acceptance: { message: 'Doit avoir au minimum 6 caractères' }
+  # validates :password, acceptance: { message: 'Doit avoir au minimum 6 caractères' }
   validates :speciality, inclusion: { in: SPECIALITIES,
     message: "%{value} n'est pas compris dans la liste" }
   validates :authentification_number, numericality: { only_integer: true }

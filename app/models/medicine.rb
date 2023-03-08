@@ -3,6 +3,5 @@ class Medicine < ApplicationRecord
   has_many :prescriptions, through: :prescription_medicines
 
   validates :NR, :name, presence: true
-  validates :NR, inclusion: ['Non-Remboursable', 'Remboursable']
-  validates :NR, exlusion: [nil]
+  validates :NR, inclusion: { in: ['Non-Remboursable', 'Remboursable'] }
 end
