@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_175913) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_08_201301) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_175913) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "medical_records", force: :cascade do |t|
+    t.text "content"
+    t.boolean "ald"
+    t.bigint "patient_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "consultation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["consultation_id"], name: "index_medical_records_on_consultation_id"
+    t.index ["patient_id"], name: "index_medical_records_on_patient_id"
+    t.index ["user_id"], name: "index_medical_records_on_user_id"
   end
 
   create_table "medicines", force: :cascade do |t|
@@ -128,6 +141,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_175913) do
   add_foreign_key "chatrooms", "patients"
   add_foreign_key "consultations", "patients"
   add_foreign_key "consultations", "users"
+  add_foreign_key "medical_records", "consultations"
+  add_foreign_key "medical_records", "patients"
+  add_foreign_key "medical_records", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "prescription_daily_takes", "daily_takes"
