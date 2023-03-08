@@ -5,4 +5,6 @@ class Prescription < ApplicationRecord
   has_many :prescription_medicines
   has_many :medicines, through: :prescription_medicines
   has_many :medical_procedures, through: :prescription_medicines
+
+  validates :date, presence: true
 end
