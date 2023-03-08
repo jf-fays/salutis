@@ -67,6 +67,7 @@ patient5 = Patient.create(
   height: 165,
   weight: 54,
   gender: "féminin"
+)
 
 doctor1 = User.create(
   first_name: "Gregory",
@@ -125,3 +126,35 @@ days.each do |day|
 end
 
 puts "#{DailyTake.count} daily_take created"
+
+medicine1 = Medicine.create(
+  name: "Doliprane",
+  NR: "Refundable"
+)
+
+medicine2 = Medicine.create(
+  name: "Advil",
+  NR: "Refundable"
+)
+
+medicine3 = Medicine.create(
+  name: "Maxilase",
+  NR: "Non-refundable"
+)
+
+medicine4 = Medicine.create(
+  name: "Amoxicilline",
+  NR: "Refundable"
+)
+
+medicine5 = Medicine.create(
+  name: "Aspirine",
+  NR: "Refundable"
+)
+
+medicine5 = Medicine.create(
+  name: "Allergoflash",
+  NR: "Non-refundable"
+)
+
+puts "#{Medicine.count} medicines created"
