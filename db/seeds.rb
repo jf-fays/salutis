@@ -49,3 +49,16 @@ doctor5 = User.create(
   speciality: "ophtalmologist",
   authentification_number: "523456789"
 )
+
+puts "#{User.count} doctors created"
+
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+days_times = ["Morning", "Noon", "Evening", "Night", "If necessary"]
+
+days.each do |day|
+  days_times.each do |time|
+    DailyTake.create(day: day, day_time: time)
+  end
+end
+
+puts "#{DailyTake.count} daily_take created"
