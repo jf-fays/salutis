@@ -8,6 +8,8 @@
 
 Patient.destroy_all
 User.destroy_all
+DailyTake.destroy_all
+Medicine.destroy_all
 
 patient1 = Patient.create(
   first_name: "John",
@@ -116,7 +118,7 @@ doctor5 = User.create(
   authentification_number: "523456789"
 )
 
-puts "#{User.count} User created"
+puts "#{User.count} Users created"
 
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 days_times = ["Morning", "Noon", "Evening", "Night", "If necessary"]
@@ -127,4 +129,36 @@ days.each do |day|
   end
 end
 
-puts "#{DailyTake.count} daily_take created"
+puts "#{DailyTake.count} daily_takes created"
+
+medicine1 = Medicine.create(
+  name: "Doliprane",
+  NR: "Refundable"
+)
+
+medicine2 = Medicine.create(
+  name: "Advil",
+  NR: "Refundable"
+)
+
+medicine3 = Medicine.create(
+  name: "Maxilase",
+  NR: "Non-refundable"
+)
+
+medicine4 = Medicine.create(
+  name: "Amoxicilline",
+  NR: "Refundable"
+)
+
+medicine5 = Medicine.create(
+  name: "Aspirine",
+  NR: "Refundable"
+)
+
+medicine5 = Medicine.create(
+  name: "Allergoflash",
+  NR: "Non-refundable"
+)
+
+puts "#{Medicine.count} medicines created"
