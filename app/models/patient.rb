@@ -8,7 +8,7 @@ class Patient < ApplicationRecord
 
   validates :first_name, :last_name, :birthday, :social_security_number, presence: true
   validates :height, :weight, :gender, presence: true
-  # validates :birthday, other_than: Date.today
+  validates :birthday, comparison: { less_than: Date.today }
   validates :social_security_number, length: { is: 15 }
   validates :social_security_number, uniqueness: true
   validates :height, numericality: true
