@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Patient.destroy_all
-User.destroy_all
-DailyTake.destroy_all
-Medicine.destroy_all
+# Patient.destroy_all
+# # User.destroy_all
+# DailyTake.destroy_all
+# Medicine.destroy_all
 
 patient1 = Patient.create(
   first_name: "John",
@@ -78,7 +78,7 @@ doctor1 = User.create(
   last_name: "House",
   email: "dr.house@med.fr",
   password: "testgh",
-  speciality: "GP",
+  speciality: "medecine",
   authentification_number: "123456789"
 )
 
@@ -87,7 +87,7 @@ doctor2 = User.create(
   last_name: "Doolittle",
   email: "dr.doolitle@med.fr",
   password: "testjd",
-  speciality: "dentist",
+  speciality: "gynécologie",
   authentification_number: "223456789"
 )
 
@@ -96,7 +96,7 @@ doctor3 = User.create(
   last_name: "Apgar",
   email: "dr.apgar@med.fr",
   password: "testva",
-  speciality: "pediatrician",
+  speciality: "anésthésiologie",
   authentification_number: "323456789"
 )
 
@@ -105,7 +105,7 @@ doctor4 = User.create(
   last_name: "Murphy",
   email: "dr.murphy@med.fr",
   password: "testsm",
-  speciality: "surgeon",
+  speciality: "cardiologie",
   authentification_number: "423456789"
 )
 
@@ -114,14 +114,14 @@ doctor5 = User.create(
   last_name: "Eyes",
   email: "dr.eyes@med.fr",
   password: "testpe",
-  speciality: "ophtalmologist",
+  speciality: "chirurgie",
   authentification_number: "523456789"
 )
 
 puts "#{User.count} Users created"
 
-days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-days_times = ["Morning", "Noon", "Evening", "Night", "If necessary"]
+days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+days_times = ["Matin", "Midi", "Soir", "Nuit", "Si besoin"]
 
 days.each do |day|
   days_times.each do |time|
@@ -133,32 +133,32 @@ puts "#{DailyTake.count} daily_takes created"
 
 medicine1 = Medicine.create(
   name: "Doliprane",
-  NR: "Refundable"
+  NR: "Remboursable"
 )
 
 medicine2 = Medicine.create(
   name: "Advil",
-  NR: "Refundable"
+  NR: "Remboursable"
 )
 
 medicine3 = Medicine.create(
   name: "Maxilase",
-  NR: "Non-refundable"
+  NR: "Non-Remboursable"
 )
 
 medicine4 = Medicine.create(
   name: "Amoxicilline",
-  NR: "Refundable"
+  NR: "Remboursable"
 )
 
 medicine5 = Medicine.create(
   name: "Aspirine",
-  NR: "Refundable"
+  NR: "Remboursable"
 )
 
 medicine5 = Medicine.create(
   name: "Allergoflash",
-  NR: "Non-refundable"
+  NR: "Non-Remboursable"
 )
 
 puts "#{Medicine.count} medicines created"

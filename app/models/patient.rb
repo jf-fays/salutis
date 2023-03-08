@@ -4,13 +4,14 @@ class Patient < ApplicationRecord
   has_many :prescriptions
   has_many :doctors, through: :consultations, class_name: 'User'
 
-  validates :first_name, :last_name, :birthday, :security_number, :pathology, :medical_record, presence: true
+  GENDERS = %w(masculin féminin)
+
+  validates :first_name, :last_name, :birthday, :social_security_number, :pathology, :medical_record, presence: true
   validates :height, :weight, :gender, presence: true
-  validates :birthday, other_than: Date.today
-  validates :security_number, lenght: { is: 15 }
-  validates :pathology
+  # validates :birthday, other_than: Date.today
+  validates :social_security_number, length: { is: 15 }
   validates :height, numericality: true
   validates :weight, numericality: true
-  validates :gender, { in: %w(Masculin Féminin),
+  validates :gender, { in: GENDERS,
     message: "%{value} n'apparait pas dans la liste" }
 end
