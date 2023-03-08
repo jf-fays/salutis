@@ -5,6 +5,6 @@ class PrescriptionMedicine < ApplicationRecord
   has_many :prescription_daily_takes
   has_many :daily_take, through: :prescription_daily_takes
 
-  # validates :dosage, :duration, presence: true
-  # validates :duration, numericality: true
+  validates :dosage, :duration, presence: true
+  validates :duration, numericality: true
 end
