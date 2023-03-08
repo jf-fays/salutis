@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :messages
   has_many :consultations
   has_many :prescriptions
+  has_many :medical_records
   has_many :patients, through: :consultations
   has_many :chatrooms, through: :messages
 
