@@ -67,6 +67,9 @@ patient5 = Patient.create(
   height: 165,
   weight: 54,
   gender: "féminin"
+)
+
+puts "#{Patient.count} Patients created"
 
 doctor1 = User.create(
   first_name: "Gregory",
@@ -113,7 +116,7 @@ doctor5 = User.create(
   authentification_number: "523456789"
 )
 
-puts "#{User.count} doctors created"
+puts "#{User.count} User created"
 
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 days_times = ["Morning", "Noon", "Evening", "Night", "If necessary"]
