@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "pages#home"
-  get '/users/:id', to: 'pages#dashboard'
+  get '/users/:id', to: 'pages#dashboard', as: 'user'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
