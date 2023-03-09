@@ -18,7 +18,6 @@ patient1 = Patient.create(
   birthday: Date.new(2002,3,1),
   social_security_number: "102037851302208",
   pathology: "diabète",
-  medical_record: "",
   height: 183,
   weight: 78,
   gender: "masculin"
@@ -30,7 +29,6 @@ patient2 = Patient.create(
   birthday: Date.new(1998,7,13),
   social_security_number: "298077851304567",
   pathology: "",
-  medical_record: "",
   height: 168,
   weight: 50,
   gender: "féminin"
@@ -42,7 +40,6 @@ patient3 = Patient.create(
   birthday: Date.new(2001,2,14),
   social_security_number: "101020651303409",
   pathology: "",
-  medical_record: "",
   height: 180,
   weight: 70,
   gender: "masculin"
@@ -54,7 +51,6 @@ patient4 = Patient.create(
   birthday: Date.new(1980,6,22),
   social_security_number: "280068351302690",
   pathology: "",
-  medical_record: "",
   height: 170,
   weight: 54,
   gender: "féminin"
@@ -66,7 +62,6 @@ patient5 = Patient.create(
   birthday: Date.new(2004,4,24),
   social_security_number: "204080651313456",
   pathology: "",
-  medical_record: "",
   height: 165,
   weight: 54,
   gender: "féminin"

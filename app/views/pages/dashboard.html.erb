@@ -1,7 +1,11 @@
+<div class="container">
 <h2>Dashboard</h2>
 
 <h1>Welcome Dr. <%= @current_user.last_name %>.</h1>
 
-<%= link_to 'Consultation', "#" %>
-<%= link_to 'Chatroom', "#" %>
-<%= link_to 'Nouveau Patient', "#" %>
+  <div class="buttons">
+    <%# <%= link_to 'Consultation', new_patient_consultation_path, class:"btn btn-primary" %>
+    <%= link_to 'Chatroom', "#", class:"btn btn-primary"%>
+    <%= link_to 'Nouveau Patient', new_patient_path, class:"btn btn-primary"%>
+  </div>
+</div>

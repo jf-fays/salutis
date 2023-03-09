@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_08_204118) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_09_141228) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,11 +22,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_204118) do
   end
 
   create_table "consultations", force: :cascade do |t|
-    t.date "date"
     t.bigint "user_id", null: false
     t.bigint "patient_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "content"
+    t.boolean "ald"
+    t.string "title"
     t.index ["patient_id"], name: "index_consultations_on_patient_id"
     t.index ["user_id"], name: "index_consultations_on_user_id"
   end
@@ -42,19 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_204118) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "medical_records", force: :cascade do |t|
-    t.text "content"
-    t.boolean "ald"
-    t.bigint "patient_id", null: false
-    t.bigint "user_id", null: false
-    t.bigint "consultation_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["consultation_id"], name: "index_medical_records_on_consultation_id"
-    t.index ["patient_id"], name: "index_medical_records_on_patient_id"
-    t.index ["user_id"], name: "index_medical_records_on_user_id"
   end
 
   create_table "medicines", force: :cascade do |t|
@@ -110,15 +99,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_204118) do
   end
 
   create_table "prescriptions", force: :cascade do |t|
-    t.string "date"
-    t.bigint "patient_id", null: false
-    t.bigint "user_id", null: false
     t.bigint "consultation_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["consultation_id"], name: "index_prescriptions_on_consultation_id"
-    t.index ["patient_id"], name: "index_prescriptions_on_patient_id"
-    t.index ["user_id"], name: "index_prescriptions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -140,9 +124,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_204118) do
   add_foreign_key "chatrooms", "patients"
   add_foreign_key "consultations", "patients"
   add_foreign_key "consultations", "users"
-  add_foreign_key "medical_records", "consultations"
-  add_foreign_key "medical_records", "patients"
-  add_foreign_key "medical_records", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "prescription_daily_takes", "daily_takes"
@@ -151,6 +132,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_204118) do
   add_foreign_key "prescription_medicines", "medicines"
   add_foreign_key "prescription_medicines", "prescriptions"
   add_foreign_key "prescriptions", "consultations"
-  add_foreign_key "prescriptions", "patients"
-  add_foreign_key "prescriptions", "users"
 end
