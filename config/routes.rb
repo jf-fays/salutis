@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :consultations, only: [:new, :create]
   end
   resources :consultations, only: [:show] do
-    resources :prescription, only: [:new, :create]
+    resources :prescriptions, only: [:new, :create]
   end
-  resources :prescription, only: [:show]
+  resources :prescriptions, only: [:show]
 end

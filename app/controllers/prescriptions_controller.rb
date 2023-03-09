@@ -1,15 +1,17 @@
 class PrescriptionsController < ApplicationController
-  before_action :find_prescription, only: [:show]
+  # before_action :find_prescription, only: [:show]
 
   def show
   end
 
   def new
-    @prescription = Prescription.new
     @consultation = Consultation.find(params[:consultation_id])
+    @prescription = Prescription.new
+
   end
 
   def create
+    @consultation = Consultation.find(params[:id])
     @prescription = Prescription.new(consultation_id: params[:consultation_id])
     if @prescription.save
       redirect_to root_path
@@ -18,9 +20,9 @@ class PrescriptionsController < ApplicationController
     end
   end
 
-  private
+  # private
 
-  def find_prescription
-    @prescription = Prescription.find(params[:id])
-  end
+  # def find_prescription
+  #   @prescription = Prescription.find(params[:id])
+  # end
 end

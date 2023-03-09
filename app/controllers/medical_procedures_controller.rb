@@ -6,21 +6,21 @@ class MedicalProceduresController < ApplicationController
   end
 
   def create
-    @medical_procedure = MedicalProcedure.new(params_medical_procedures)
+    @medical_procedure = MedicalProcedure.new(content: params[:content])
     if @medical_procedure.save
       redirect_to root_path
     else
-      render :new, :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
   end
 
-  private
+  # private
 
-  def params_medical_procedures
-    params.require(:medical_procedures).permit(:content)
-  end
+  # def params_medical_procedures
+  #   params.require(:medical_procedures).permit(:content)
+  # end
 
 end
