@@ -1,0 +1,21 @@
+<h1>Ajouter un Nouveau patient</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= simple_form_for @patient do |f| %>
+        <%= f.input :first_name, placeholder: "Prénom(s)" %>
+        <%= f.input :last_name, placeholder: "Nom(s) de famille" %>
+        <%= f.input :birthday, placeholder: "YYYY/mm/dd" %>
+        <%= f.input :social_security_number, placeholder: "Numéro de sécurité social" %>
+        <%= f.input :pathology, placeholder: "ALD" %>
+        <%= f.input :height, placeholder: "Taille en cm" %>
+        <%= f.input :weight, placeholder: "Poids en kg" %>
+        <%= f.input :gender, placeholder: "Masculin / Féminin" %>
+        <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit "Create patient", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+      <%= link_to "Acceuil", root_path(@patient), class: "btn btn-primary" %><br />
+  </div>
+</div>

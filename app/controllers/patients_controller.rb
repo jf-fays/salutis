@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
-  before_action :find_user, only: %i[show: update: destroy:]
+  before_action :find_user, only: [:show, :update, :destroy]
+
   def index
     @patient = Patient.all
   end
@@ -8,10 +9,14 @@ class PatientsController < ApplicationController
     # find_user
   end
 
+  def new
+    @patient = Patient.new
+  end
+
   def create
     @patient = Patient.new(params_patients)
     if @patient.save
-      redirect_to patients_path(@patient)
+      redirect_to patient_path(@patient)
     else
       render :show, status: :unprocessable_entity
     end
@@ -20,7 +25,7 @@ class PatientsController < ApplicationController
   def update
     # find_user
     if @patient.update(params_patients)
-      redirect_to patients_path(@patient)
+      redirect_to patient_path(@patient)
     else
       render :show, status: :unprocessable_entity
     end
@@ -35,7 +40,7 @@ class PatientsController < ApplicationController
   private
 
   def params_patients
-    params.require(:patients).permit(
+    params.require(:patient).permit(
       :first_name, :last_name, :birthday, :social_security_number,
       :pathology, :medical_record, :height, :weight, :gender
     )
