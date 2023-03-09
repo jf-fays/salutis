@@ -3,5 +3,8 @@
 
 
     <%= simple_form_for [@patient, @consultation] do |f| %>
+        <%= f.input :title %>
+        <%= f.input :ald %>
+        <%= f.input :content %>
         <%= f.submit "Créer consultation", class: "btn btn-primary" %>
     <% end %>
