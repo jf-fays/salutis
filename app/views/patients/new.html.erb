@@ -6,7 +6,7 @@
       <%= simple_form_for @patient do |f| %>
         <%= f.input :first_name, placeholder: "Prénom(s)" %>
         <%= f.input :last_name, placeholder: "Nom(s) de famille" %>
-        <%= f.input :birthday, placeholder: "YYYY/mm/dd" %>
+        <%= f.input :birthday, start_year: Date.today.year - 110, end_year: Date.today.year,  placeholder: "YYYY/mm/dd" %>
         <%= f.input :social_security_number, placeholder: "Numéro de sécurité social" %>
         <%= f.input :pathology, placeholder: "ALD" %>
         <%= f.input :height, placeholder: "Taille en cm" %>
