@@ -13,4 +13,11 @@ class Patient < ApplicationRecord
   validates :height, numericality: true
   validates :weight, numericality: true
   validates :gender, inclusion: { in: GENDERS, message: "n'apparait pas dans la liste" }
+
+  include PgSearch::Model
+  pg_search_scope :search_by_first_name_and_last_name_and_social_security_number,
+  against: [ :first_name, :last_name, :social_security_number ],
+  using: {
+    tsearch: { prefix: true }
+  }
 end
