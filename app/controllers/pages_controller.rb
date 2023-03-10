@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, except: [:home]
 
   def home
-    # @patients = Patient.all
+    @patients = Patient.all
   end
 
   def dashboard
