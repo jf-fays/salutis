@@ -7,11 +7,7 @@ class PagesController < ApplicationController
   def dashboard
     @patients = current_user.patients
     if params[:query].present?
-      sql_query = <<~SQL
-        patients.first_name @@ :query
-        OR patients.last_name @@ :query
-        OR patients.social_security_number @@ :query
-      SQL
+      @patients = Patient.search_by_first_name_and_last_name_and_social_security_number(params[:query])
     else
       @patients = Patient.all
     end
