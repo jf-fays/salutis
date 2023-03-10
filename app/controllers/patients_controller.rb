@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_action :find_user, only: [:show, :update, :destroy]
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @patient = Patient.all
@@ -7,6 +7,9 @@ class PatientsController < ApplicationController
 
   def show
     # find_user
+  end
+
+  def edit
   end
 
   def new
