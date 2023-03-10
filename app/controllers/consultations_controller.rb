@@ -12,7 +12,7 @@ class ConsultationsController < ApplicationController
     @consultation.user_id = current_user.id
     @consultation.patient_id = params[:patient_id]
     if @consultation.save
-      redirect_to root_path
+      redirect_to consultation_path(@consultation.id)
     else
       render :new, status: :unprocessable_entity
     end

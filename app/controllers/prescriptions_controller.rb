@@ -8,7 +8,7 @@ class PrescriptionsController < ApplicationController
 
   def new
     @consultation = Consultation.find(params[:consultation_id])
-    @prescription = Prescription.create(consultation_id: @consultation.id, content: @prescription.content)
+    @prescription = Prescription.create(consultation_id: @consultation.id)
   end
 
   def create
