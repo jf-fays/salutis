@@ -1,0 +1,20 @@
+<div class="container">
+ <div class="row">
+    <div class="col">
+      <%= simple_form_for @patient do |f| %>
+        <%= f.input :first_name, placeholder: "Prénom(s)" %>
+        <%= f.input :last_name, placeholder: "Nom(s) de famille" %>
+        <%= f.input :birthday, placeholder: "YYYY/mm/dd" %>
+        <%= f.input :social_security_number, placeholder: "Numéro de sécurité social" %>
+        <%= f.input :pathology, placeholder: "ALD" %>
+        <%= f.input :height, placeholder: "Taille en cm" %>
+        <%= f.input :weight, placeholder: "Poids en kg" %>
+        <%= f.input :gender, placeholder: "Masculin / Féminin" %>
+        <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <div class="d-flex justify-content-around">
+        <%= f.submit "Update", class: "btn btn-primary" %>
+      <% end %>
+      <%= link_to "Retour profil patient", patient_path(@patient.id), class: "btn btn-primary" %>
+      </div>
+    </div>
+</div>
