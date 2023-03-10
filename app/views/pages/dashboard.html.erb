@@ -10,7 +10,7 @@
 
 <div class="row justify-content-center">
   <div class="searchbar col-md-10">
-    <%= form_with url: user_path, method: :get, class: "d-flex" do %>
+    <%= form_with url: dashboard_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
@@ -26,7 +26,7 @@
         <div class="card-product">
           <% @patients.each do |patient| %>
             <div class="card-product-infos">
-              <img src="app/assets/images/avatar_patient.png" alt="profile picture">
+              <%= image_tag "avatar_patient.png" %>
               <h2><%= patient.last_name %></h2>
               <h2><%= patient.first_name %></h2>
               <p><%= patient.social_security_number %></p>

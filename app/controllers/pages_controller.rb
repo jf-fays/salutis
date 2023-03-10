@@ -5,7 +5,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @users = current_user
     @patients = current_user.patients
     if params[:query].present?
       sql_query = <<~SQL
