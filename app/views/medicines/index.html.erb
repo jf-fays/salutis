@@ -1,7 +1,11 @@
-<h1>Medicines#index</h1>
-<p>Find me in app/views/medicines/index.html.erb</p>
-<% @medicines.each do |medicine| %>
-  <h1><%= medicine.name %></h1>
-  <p>NR : <%= medicine.NR %></p>
-   <%= link_to 'Details', medicine_path(medicine.id), class: 'btn btn-primary' %>
-<% end %>
+
+<div class="container">
+  <h1>Medicines</h1>
+
+  <% @medicines.each do |medicine| %>
+    <h1><%= medicine.name %></h1>
+    <p>NR : <%= medicine.NR %></p>
+     <%= link_to 'Details', medicine_path(medicine.id), class: 'btn btn-primary' %>
+  <% end %>
+
+</div>

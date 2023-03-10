@@ -15,7 +15,7 @@ class MedicinesController < ApplicationController
   def create
     @medicine = Medicine.new(params_medicines)
     if @medicine.save
-      redirect_to medicines_index_path
+      redirect_to medicines_path
     else
       render :new, status: :unprocessable_entity
     end
