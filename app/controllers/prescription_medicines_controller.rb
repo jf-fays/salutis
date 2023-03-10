@@ -7,18 +7,16 @@ class PrescriptionMedicinesController < ApplicationController
   def show
   end
 
-  def new
-    @prescription = Prescription.create(params[:prescription_id])
-    @pres_med = PrescriptionMedicine.new
-    # @medical_procedures = MedicalProcedure.new
-  end
-
   def create
-    raise
-    @pres_med = PrescriptionMedicine.new(params_presc)
-    @prescription = Prescription.find(params[:id])
-    @medical = MedicalProcedure.find(params[:medical_procedures])
-    # @medicines =
+    @prescription_medicine = PrescriptionMedicine.new(
+      duration: params[:prescription_medicine][:duration],  dosage: params[:prescription_medicine][:dosage],
+      medicine_id: params[:prescription_medicine][:medicine_id], prescription_id: params[:prescription_id]
+    )
+    if @prescription_medicine.save
+      redirect_to prescription_path(params[:prescription_id])
+    else
+      redirect_to prescription_path(params[:prescription_id]), status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -33,7 +31,7 @@ class PrescriptionMedicinesController < ApplicationController
   private
 
   def params_presc
-    params.require(:prescription_medicine).permit(:duration, :dosage)
+    params.require(:prescription_medicine).permit(:duration, :dosage, :medicine_id, :daily_take)
   end
 
   def find_pres
