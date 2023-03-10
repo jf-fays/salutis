@@ -5,7 +5,7 @@
   </div>
 
   <div class="name">
-    <h1>Welcome Dr. <%= @current_user.last_name %>.</h1>
+    <h1>Welcome Dr. <%= current_user.last_name %>.</h1>
   </div>
 
 <div class="row justify-content-center">
@@ -20,17 +20,18 @@
     <% end %>
   </div>
 </div>
-
     <div class="row justify-content-center">
       <div class="col-sm-8">
         <div class="card-product">
           <% @patients.each do |patient| %>
-            <div class="card-product-infos">
-              <%= image_tag "avatar_patient.png" %>
-              <h2><%= patient.last_name %></h2>
-              <h2><%= patient.first_name %></h2>
-              <p><%= patient.social_security_number %></p>
-            </div>
+            <%= link_to patient_path(patient.id) do %>
+              <div class="card-product-infos">
+                <%= image_tag "avatar_patient.png" %>
+                <h2><%= patient.last_name %></h2>
+                <h2><%= patient.first_name %></h2>
+                <p><%= patient.social_security_number %></p>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>

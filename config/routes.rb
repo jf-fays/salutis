@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'medical_procedures/new'
-  get 'medical_procedures/show'
-  get 'medical_procedures/create'
-  get 'medical_procedures/update'
-
   devise_for :users
   root to: "pages#home"
   get '/dashboard', to: 'pages#dashboard'
@@ -13,12 +8,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :patients, only: [:index, :show, :new, :create, :update, :destroy] do
+  resources :patients, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :consultations, only: [:new, :create]
   end
   resources :consultations, only: [:show] do
     resources :prescriptions, only: [:new, :create]
   end
-  resources :prescriptions, only: [:show]
+ 
   resources :medicines, only: [:index, :show, :new, :create, :update]
+  
+  resources :prescriptions, only: [:show] do
+    resources :prescription_medicines
+  end
+
+  resources :medical_procedures
 end

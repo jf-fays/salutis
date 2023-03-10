@@ -1,0 +1,13 @@
+<h1>Prescription Medicines</h1>
+
+
+ <%= simple_form_for [@prescription, @pres_med] do |f| %>
+        <%= f.input :dosage, placeholder: "Dosage(s) de la solution" %>
+        <%= f.input :duration, start_year: Date.today.year, placeholder: "Durée du traitement" %>
+
+        <%= f.submit "Create patient", class: "btn btn-primary" %>
+      <% end %>
+
+ <%= simple_form_for @prescription do |f| %>
+        <%= f.input :dosage, placeholder: "Dosage(s) de la solution" %>
+<%= link_to "Acceuil", root_path(@patient), class: "btn btn-primary" %>
