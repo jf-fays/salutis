@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'medical_procedures/new'
   get 'medical_procedures/show'
   get 'medical_procedures/create'
@@ -19,4 +20,5 @@ Rails.application.routes.draw do
     resources :prescriptions, only: [:new, :create]
   end
   resources :prescriptions, only: [:show]
+  resources :medicines, only: [:index, :show, :new, :create, :update]
 end

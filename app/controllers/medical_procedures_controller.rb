@@ -1,6 +1,4 @@
 class MedicalProceduresController < ApplicationController
-
-
   def new
     @medical_procedure = MedicalProcedure.new
   end
