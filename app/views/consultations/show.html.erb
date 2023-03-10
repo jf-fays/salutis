@@ -1,5 +1,14 @@
 <h1>Mes consultations</h1>
-
+<div class="container">
     <%= simple_form_for [@consultation, @prescription] do |f| %>
         <%= f.submit "Nouvelle prescription", class: "btn btn-primary" %>
     <% end %>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8"></div>
+      <p><%= @consultation.title %></p>
+      <%# <p><%= @consultation.ald</p> %>
+      <p><%= @consultation.content %></p>
+    </div>
+  </div>
+</div>
