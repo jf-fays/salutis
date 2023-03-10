@@ -1,8 +1,6 @@
-<h1>Modifier Profil</h1>
+<h1 class="p-3">Profil</h1>
 
-
-
-<div class="container">
+<div class="container d-flex justify-content-around">
   <%= link_to 'Consultation', new_patient_consultation_path(@patient.id), class: "btn btn-primary" %>
   <%= link_to 'Editer profil', edit_patient_path(@patient.id) , class: "btn btn-primary" %>
 </div>

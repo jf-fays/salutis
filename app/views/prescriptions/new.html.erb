@@ -8,11 +8,7 @@
     <%# <% end %>
 
 <p><%= link_to 'Créer une procédure médicale ', new_medical_procedure_path %></p>
-    <%= simple_form_for @prescription do |f| %>
+    <%= simple_form_for [@consultation, @prescription] do |f| %>
         <%= f.input :content %>
         <%= f.submit "Ajouter du contenu", class: "btn btn-primary" %>
     <% end %>
-
-<p><%= link_to 'Créer une préscription medicale ', '#' %></p>
-
-<p><%= link_to 'Créer une durée de prescription', '#' %></p>
