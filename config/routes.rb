@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root to: "pages#home"
   get '/dashboard', to: 'pages#dashboard'
@@ -13,6 +14,9 @@ Rails.application.routes.draw do
   resources :consultations, only: [:show] do
     resources :prescriptions, only: [:new, :create]
   end
+ 
+  resources :medicines, only: [:index, :show, :new, :create, :update]
+  
   resources :prescriptions, only: [:show] do
     resources :prescription_medicines
   end
