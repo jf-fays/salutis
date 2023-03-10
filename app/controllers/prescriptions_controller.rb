@@ -3,11 +3,12 @@ class PrescriptionsController < ApplicationController
 
   def show
     @medical_procedure = MedicalProcedure.new
+    @prescription_medicine = PrescriptionMedicine.new
   end
 
   def new
     @consultation = Consultation.find(params[:consultation_id])
-    @prescription = Prescription.create(consultation_id: @consultation.id, content: @prescription.content)
+    @prescription = Prescription.create(consultation_id: @consultation.id)
   end
 
   def create

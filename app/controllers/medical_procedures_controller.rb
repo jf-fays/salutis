@@ -1,6 +1,7 @@
 class MedicalProceduresController < ApplicationController
   def new
     @medical_procedure = MedicalProcedure.new
+    @prescription_medicine = PrescriptionMedicine.new
   end
 
   def create
@@ -9,7 +10,7 @@ class MedicalProceduresController < ApplicationController
     if @medical_procedure.save
       redirect_to prescription_path(params[:prescription_id])
     else
-      render :new, status: :unprocessable_entity
+      redirect_to prescription_path(params[:prescription_id]), status: :unprocessable_entity
     end
   end
 
