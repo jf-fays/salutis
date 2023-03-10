@@ -14,12 +14,12 @@ Rails.application.routes.draw do
   resources :consultations, only: [:show] do
     resources :prescriptions, only: [:new, :create]
   end
- 
+
   resources :medicines, only: [:index, :show, :new, :create, :update]
-  
+
   resources :prescriptions, only: [:show] do
     resources :prescription_medicines
-    resources :medical_procedures, only: [:create]
+    resources :medical_procedures, only: [:create, :new]
   end
 
   # resources :medical_procedures, only: [:show]
