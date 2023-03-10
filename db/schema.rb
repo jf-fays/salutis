@@ -42,8 +42,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_141228) do
 
   create_table "medical_procedures", force: :cascade do |t|
     t.string "content"
+    t.bigint "prescription_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["prescription_id"], name: "index_medical_procedures_on_prescription_id"
   end
 
   create_table "medicines", force: :cascade do |t|
@@ -89,11 +91,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_141228) do
     t.integer "duration"
     t.string "dosage"
     t.bigint "prescription_id", null: false
-    t.bigint "medical_procedure_id", null: false
     t.bigint "medicine_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["medical_procedure_id"], name: "index_prescription_medicines_on_medical_procedure_id"
     t.index ["medicine_id"], name: "index_prescription_medicines_on_medicine_id"
     t.index ["prescription_id"], name: "index_prescription_medicines_on_prescription_id"
   end
@@ -124,11 +124,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_141228) do
   add_foreign_key "chatrooms", "patients"
   add_foreign_key "consultations", "patients"
   add_foreign_key "consultations", "users"
+  add_foreign_key "medical_procedures", "prescriptions"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "prescription_daily_takes", "daily_takes"
   add_foreign_key "prescription_daily_takes", "prescription_medicines"
-  add_foreign_key "prescription_medicines", "medical_procedures"
   add_foreign_key "prescription_medicines", "medicines"
   add_foreign_key "prescription_medicines", "prescriptions"
   add_foreign_key "prescriptions", "consultations"
