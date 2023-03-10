@@ -1,6 +1,7 @@
 class ConsultationsController < ApplicationController
   before_action :find_consultation, only: [:show]
   def show
+    @prescription = Prescription.new
   end
   def new
     @consultation = Consultation.new

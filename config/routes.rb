@@ -19,7 +19,8 @@ Rails.application.routes.draw do
   
   resources :prescriptions, only: [:show] do
     resources :prescription_medicines
+    resources :medical_procedures, only: [:create]
   end
 
-  resources :medical_procedures
+  # resources :medical_procedures, only: [:show]
 end

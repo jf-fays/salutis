@@ -1,2 +1,5 @@
-<h1>Consultations#show</h1>
-<p>Find me in app/views/consultations/show.html.erb</p>
+<h1>Mes consultations</h1>
+
+    <%= simple_form_for [@consultation, @prescription] do |f| %>
+        <%= f.submit "Nouvelle prescription", class: "btn btn-primary" %>
+    <% end %>
