@@ -1,5 +1,18 @@
 <h1>New Prescription</h1>
 
-    <%= simple_form_for [@consultation, @prescription] do |f| %>
-        <%= f.submit "Créer ordonnance", class: "btn btn-primary" %>
+<%# <%= link_to 'Créer un nouveau médicament', medicines_new_path %>
+<%# <%= simple_form_for @prescription do |f| %>
+        <%# <%= f.input :name %>
+        <%# <%= f.input :NR %>
+        <%# <%= f.submit "Ajouter du contenu", class: "btn btn-primary" %>
+    <%# <% end %>
+
+<p><%= link_to 'Créer une procédure médicale ', new_medical_procedure_path %></p>
+    <%= simple_form_for @prescription do |f| %>
+        <%= f.input :content %>
+        <%= f.submit "Ajouter du contenu", class: "btn btn-primary" %>
     <% end %>
+
+<p><%= link_to 'Créer une préscription medicale ', '#' %></p>
+
+<p><%= link_to 'Créer une durée de prescription', '#' %></p>

@@ -159,24 +159,24 @@ medicine6 = Medicine.create(
 
 puts "#{Medicine.count} medicines created"
 
-medical_procedure1 = MedicalProcedure.create(
-  content: "réfection d’un pansement simple au domicile par une infirmière libérale jusqu’à guérison complète"
-)
+# medical_procedure1 = MedicalProcedure.create(
+#   content: "réfection d’un pansement simple au domicile par une infirmière libérale jusqu’à guérison complète"
+# )
 
-medical_procedure2 = MedicalProcedure.create(
-  content: "soins d’hygiène et de confort (toilette complète) au domicile par infirmière libérale"
-)
+# medical_procedure2 = MedicalProcedure.create(
+#   content: "soins d’hygiène et de confort (toilette complète) au domicile par infirmière libérale"
+# )
 
-medical_procedure3 = MedicalProcedure.create(
-  content: "injection d anticoagulants au domicile par infirmière libérale pendant semaines "
-)
+# medical_procedure3 = MedicalProcedure.create(
+#   content: "injection d anticoagulants au domicile par infirmière libérale pendant semaines "
+# )
 
-medical_procedure4 = MedicalProcedure.create(
-  content: "rééducation du dos"
-)
+# medical_procedure4 = MedicalProcedure.create(
+#   content: "rééducation du dos"
+# )
 
-medical_procedure5 = MedicalProcedure.create(
-  content: "faire pratiquer un bilan orthophoniste "
-)
+# medical_procedure5 = MedicalProcedure.create(
+#   content: "faire pratiquer un bilan orthophoniste "
+# )
 
-puts "#{MedicalProcedure.count} medical procedures created"
+# puts "#{MedicalProcedure.count} medical procedures created"
