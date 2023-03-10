@@ -3,6 +3,7 @@ class PrescriptionsController < ApplicationController
 
   def show
     @medical_procedure = MedicalProcedure.new
+    @prescription_medicine = PrescriptionMedicine.new
   end
 
   def new
