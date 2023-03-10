@@ -1,5 +1,5 @@
 class MedicalProcedure < ApplicationRecord
-  belongs_to :prescriptions
+  belongs_to :prescription
 
   validates :content, presence: true
   validates :content, length: { maximum: 1000,

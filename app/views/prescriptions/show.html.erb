@@ -1,5 +1,15 @@
 <h1>Prescription details</h1>
 
 <p class= "text-right"><%= @prescription.created_at %></p>
+    <div>
+      <% @prescription.medical_procedures.each do |f| %>
+        <p><%= f.content %></p>
+      <% end %>
+    </div>
+
+    <%= simple_form_for [@prescription, @medical_procedure] do |f| %>
+        <%= f.input :content %>
+        <%= f.submit "Ajouter une procédure", class: "btn btn-primary" %>
+    <% end %>
 
 <%= link_to 'Acceuil', root_path, class: "btn btn-primary" %>
