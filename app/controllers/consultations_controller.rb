@@ -18,7 +18,7 @@ class ConsultationsController < ApplicationController
   end
   private
   def params_consu
-    params.require(:consultation).permit(:content, :ald, :title)
+    params.require(:consultation).permit(:content, :ald, :title, photos: [])
   end
   def find_consultation
     @consultation = Consultation.find(params[:id])
