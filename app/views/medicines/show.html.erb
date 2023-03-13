@@ -1,5 +1,14 @@
-<h1>Medicines#show</h1>
-<p>Find me in app/views/medicines/show.html.erb</p>
 
- <h2> Name : <%= @medicine.name %></h2>
- <p> NR : <%= @medicine.NR %></p>
+<div class="container">
+
+  <h1>PRÉSENTATIONS DU MÉDICAMENT</h1>
+        <h2>Details:</h2>
+
+   <h2> Name : <%= @medicine.name %></h2>
+   <h2> Form : <%= @medicine.form %></h2>
+   <h2> Autorisation : <%= @medicine.auth %></h2>
+
+  <a href="/"><button type="button" class="btn btn-primary">Back to home</button></a>
+  <%= link_to 'Medicaments', medicines_path, class: 'btn btn-primary' %>
+
+ </div>
