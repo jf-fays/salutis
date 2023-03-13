@@ -79,7 +79,8 @@ doctor1 = User.create(
   email: "dr.house@med.fr",
   password: "testgh",
   speciality: "medecine",
-  authentification_number: "123456789"
+  authentification_number: "123456789",
+  nickname: "Dr G. House"
 )
 
 doctor2 = User.create(
@@ -88,7 +89,8 @@ doctor2 = User.create(
   email: "dr.doolitle@med.fr",
   password: "testjd",
   speciality: "gynécologie",
-  authentification_number: "223456789"
+  authentification_number: "223456789",
+  nickname: "Dr J. Doolittle"
 )
 
 doctor3 = User.create(
@@ -97,7 +99,8 @@ doctor3 = User.create(
   email: "dr.apgar@med.fr",
   password: "testva",
   speciality: "anésthésiologie",
-  authentification_number: "323456789"
+  authentification_number: "323456789",
+  nickname: "Dr V. Apgar"
 )
 
 doctor4 = User.create(
@@ -106,7 +109,8 @@ doctor4 = User.create(
   email: "dr.murphy@med.fr",
   password: "testsm",
   speciality: "cardiologie",
-  authentification_number: "423456789"
+  authentification_number: "423456789",
+  nickname: "Dr S. Murphy"
 )
 
 doctor5 = User.create(
@@ -115,7 +119,8 @@ doctor5 = User.create(
   email: "dr.eyes@med.fr",
   password: "testpe",
   speciality: "chirurgie",
-  authentification_number: "523456789"
+  authentification_number: "523456789",
+  nickname: "Dr P. Eyes"
 )
 
 puts "#{User.count} Users created"

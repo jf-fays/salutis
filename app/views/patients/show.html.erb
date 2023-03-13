@@ -3,6 +3,7 @@
 <div class="container d-flex justify-content-around my-4">
   <%= link_to 'Consultation', new_patient_consultation_path(@patient.id), class: "btn btn-primary" %>
   <%= link_to 'Editer profil', edit_patient_path(@patient.id) , class: "btn btn-primary" %>
+   <%= link_to 'Fil de discussion', chatroom_path(@chatroom.id) , class: "btn btn-primary" %>
 </div>
 
 <div class="row justify-content-center">
