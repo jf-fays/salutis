@@ -10,7 +10,9 @@ class PatientsController < ApplicationController
     @consultations = @patient.consultations
         # if params[:consulation].present?
     @chatroom = Chatroom.find_by_patient_id(@patient.id)
-
+    unless @chatroom
+      @chatroom = Chatroom.create(patient_id: @patient.id)
+    end
   end
 
   def edit
@@ -23,9 +25,10 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new(params_patients)
     if @patient.save
+      Chatroom.create(patient_id: @patient.id)
       redirect_to patient_path(@patient)
     else
-      render :show, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
