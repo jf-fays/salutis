@@ -1,21 +1,21 @@
-<h1 class="p-3">Profil</h1>
+<h1 class="h6-3 text-center mb-4"><%= "#{@patient.first_name} #{@patient.last_name}" %></h1>
 
-<div class="container d-flex justify-content-around">
+<div class="container d-flex justify-content-around my-4">
   <%= link_to 'Consultation', new_patient_consultation_path(@patient.id), class: "btn btn-primary" %>
   <%= link_to 'Editer profil', edit_patient_path(@patient.id) , class: "btn btn-primary" %>
    <%= link_to 'Fil de discussion', chatroom_path(@chatroom.id) , class: "btn btn-primary" %>
 </div>
 
 <div class="row justify-content-center">
-  <div class="col-sm-8">
+  <div class="col-sm-10">
     <div class="card-product">
       <% @consultations.each do |consultation| %>
         <%= link_to consultation_path(consultation.id) do %>
           <div class="card-product-infos">
               <%= image_tag "ordonnance_test.png" %>
-            <p>Sujet : <%= consultation.title %></p>
-            <p><%= consultation.ald %></p>
-            <p>Compte-rendu : <%= consultation.content %></p>
+            <h6>Sujet : <%= consultation.title %></h6>
+            <h6><%= consultation.ald %></h6>
+            <h6>Compte-rendu : <%= consultation.content %></h6>
           </div>
         <% end %>
       <% end %>

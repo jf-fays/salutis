@@ -8,11 +8,16 @@ class PrescriptionMedicinesController < ApplicationController
   end
 
   def create
+
     @prescription_medicine = PrescriptionMedicine.new(
       duration: params[:prescription_medicine][:duration],  dosage: params[:prescription_medicine][:dosage],
-      medicine_id: params[:prescription_medicine][:medicine_id], prescription_id: params[:prescription_id]
+      medicine_id: params[:prescription_medicine][:medicine_id], prescription_id: params[:prescription_id],
     )
     if @prescription_medicine.save
+      daily_takes = params[:prescription_medicine][:daily_take].reject { |c| c.empty? }
+      daily_takes.each do |n|
+        PrescriptionDailyTake.create(daily_take_id: n.to_i, prescription_medicine_id: @prescription_medicine.id)
+      end
       redirect_to prescription_path(params[:prescription_id])
     else
       redirect_to prescription_path(params[:prescription_id]), status: :unprocessable_entity

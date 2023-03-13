@@ -6,11 +6,15 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-User.destroy_all
-Patient.destroy_all
-DailyTake.destroy_all
-# Medicine.destroy_all
+PrescriptionMedicine.destroy_all
+PrescriptionDailyTake.destroy_all
 MedicalProcedure.destroy_all
+Prescription.destroy_all
+Consultation.destroy_all
+DailyTake.destroy_all
+Medicine.destroy_all
+Patient.destroy_all
+User.destroy_all
 
 patient1 = Patient.create(
   first_name: "John",
@@ -162,20 +166,18 @@ puts "#{DailyTake.count} daily_takes created"
 #   NR: "Non-Remboursable"
 # )
 
+require 'csv'
 
-
-# require 'csv'
-
-# CSV.foreach(Rails.root.join('lib/seed_scv/medecines.csv'), headers: true) do |row|
-#   m = Medicine.create!({
-#     name: row["name"],
-#     form: row["type"],
-#     auth: row["auth"],
-#     nr: false,
-#     registration_number: row['num']
-#     })
-#   p m.name
-# end
+CSV.foreach(Rails.root.join('lib/seed_scv/medecines.csv'), headers: true) do |row|
+  m = Medicine.create!({
+    name: row["name"],
+    form: row["type"],
+    auth: row["auth"],
+    nr: false,
+    registration_number: row['num']
+    })
+  p m.name
+end
 
 puts "#{Medicine.count} medicines created"
 # medical_procedure1 = MedicalProcedure.create(

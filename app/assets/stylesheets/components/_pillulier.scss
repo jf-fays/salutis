@@ -1,0 +1,13 @@
+.wrapper {
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    height: 346px;
+    // width: 100vw;
+}
+
+.try {
+  padding-right: 125px;
+  display: flex;
+  justify-content: space-between;
+}
