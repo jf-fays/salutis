@@ -9,6 +9,7 @@ class PatientsController < ApplicationController
     # find_user
     @consultations = @patient.consultations
         # if params[:consulation].present?
+    @chatroom = Chatroom.find_by_patient_id(@patient.id)
 
   end
 
