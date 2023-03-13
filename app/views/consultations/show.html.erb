@@ -4,11 +4,14 @@
         <%= f.submit "Nouvelle prescription", class: "btn btn-primary" %>
     <% end %>
 
-  <div class="row justify-content-center">
-    <div class="col-sm-8"></div>
-      <p><%= @consultation.title %></p>
-      <%# <p><%= @consultation.ald</p> %>
-      <p><%= @consultation.content %></p>
+
+<div class="row justify-content-center">
+    <div class="card-product">
+        <div class="card-product-infos">
+          <%= image_tag "ordonnance_test.png" %>
+          <h6>Sujet : <%= @consultation.title %></h6>
+          <h6><%= @consultation.ald %></h6>
+          <h6>Compte-rendu : <%= @consultation.content %></h6>
+        </div>
     </div>
-  </div>
 </div>
