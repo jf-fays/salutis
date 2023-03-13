@@ -6,4 +6,8 @@ class Medicine < ApplicationRecord
 
   # validates :nr, :name, presence: true
   # validates :nr, inclusion: { in: NRMEDECINE }
+
+  def name_form_medicine
+    "#{self.name} - (#{self.form})"
+  end
 end

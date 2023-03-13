@@ -19,7 +19,7 @@
     </div>
 
   <%= simple_form_for [@prescription, @prescription_medicine] do |f| %>
-        <%= f.input :medicine_id, collection: Medicine.all %>
+        <%= f.input :medicine_id, collection: Medicine.all, label_method: :name_form_medicine %>
         <%= f.input :daily_take, collection: DailyTake.all.map{ |day| "#{day.day} #{day.day_time}"} %>
         <%= f.input :duration %>
         <%= f.input :dosage %>
