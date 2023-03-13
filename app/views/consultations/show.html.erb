@@ -9,9 +9,12 @@
     <div class="card-product">
         <div class="card-product-infos">
           <%= image_tag "ordonnance_test.png" %>
-          <h6>Sujet : <%= @consultation.title %></h6>
-          <h6><%= @consultation.ald %></h6>
-          <h6>Compte-rendu : <%= @consultation.content %></h6>
+          <div class = "text-group">
+            <p><%= @consultation.created_at %></p>
+            <h6><%= @consultation.title %></h6>
+            <p><strong><%= @consultation.content %></strong></p>
+          </div>
+            <%= image_tag "3-dots-icon.png", id: "dots" %>
         </div>
     </div>
 </div>
