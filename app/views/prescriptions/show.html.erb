@@ -19,7 +19,8 @@
     </div>
 
   <%= simple_form_for [@prescription, @prescription_medicine] do |f| %>
-        <%= f.input :medicine_id, collection: Medicine.all %>
+
+        <%= f.input :medicine_id, collection: Medicine.all, label_method: :name_form_medicine %>
         <div class = "try">
         <p>Lundi</p><p> Mardi</p> <p> Mercredi </p><p> Jeudi</p><p> Vendredi </p> <p> Samedi </p><p> Dimanche </p>
         </div>

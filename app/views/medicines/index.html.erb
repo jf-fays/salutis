@@ -1,10 +1,9 @@
 
 <div class="container">
-  <h1>Medicines</h1>
+  <h1>Medicaments</h1>
 
   <% @medicines.each do |medicine| %>
     <h1><%= medicine.name %></h1>
-    <p>NR : <%= medicine.NR %></p>
      <%= link_to 'Details', medicine_path(medicine.id), class: 'btn btn-primary' %>
   <% end %>
 
