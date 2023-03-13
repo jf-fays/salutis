@@ -4,6 +4,6 @@ class Medicine < ApplicationRecord
 
   NRMEDECINE = ['Non-Remboursable', 'Remboursable']
 
-  validates :nr, :name, presence: true
-  validates :nr, inclusion: { in: NRMEDECINE }
+  # validates :nr, :name, presence: true
+  # validates :nr, inclusion: { in: NRMEDECINE }
 end

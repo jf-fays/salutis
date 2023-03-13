@@ -20,7 +20,12 @@
 
   <%= simple_form_for [@prescription, @prescription_medicine] do |f| %>
         <%= f.input :medicine_id, collection: Medicine.all %>
-        <%= f.input :daily_take, collection: DailyTake.all.map{ |day| "#{day.day} #{day.day_time}"} %>
+        <div class = "try">
+        <p>Lundi</p><p> Mardi</p> <p> Mercredi </p><p> Jeudi</p><p> Vendredi </p> <p> Samedi </p><p> Dimanche </p>
+        </div>
+        <div class = "wrapper">
+        <%= f.collection_check_boxes :daily_take, DailyTake.all, :id, :day_time %>
+        </div>
         <%= f.input :duration %>
         <%= f.input :dosage %>
         <%= f.submit "Ajouter une prescription", class: "btn btn-primary" %>

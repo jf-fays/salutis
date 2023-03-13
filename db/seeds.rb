@@ -5,12 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
-# User.destroy_all
-# Patient.destroy_all
-# DailyTake.destroy_all
-# Medicine.destroy_all
-#MedicalProcedure.destroy_all
+PrescriptionMedicine.destroy_all
+PrescriptionDailyTake.destroy_all
+MedicalProcedure.destroy_all
+Prescription.destroy_all
+Consultation.destroy_all
+DailyTake.destroy_all
+Medicine.destroy_all
+Patient.destroy_all
+User.destroy_all
 
 patient1 = Patient.create(
   first_name: "John",
@@ -129,32 +132,32 @@ puts "#{DailyTake.count} daily_takes created"
 
 medicine1 = Medicine.create(
   name: "Doliprane",
-  NR: "Remboursable"
+  # NR: "Remboursable"
 )
 
 medicine2 = Medicine.create(
   name: "Advil",
-  NR: "Remboursable"
+  # NR: "Remboursable"
 )
 
 medicine3 = Medicine.create(
   name: "Maxilase",
-  NR: "Non-Remboursable"
+  # NR: "Non-Remboursable"
 )
 
 medicine4 = Medicine.create(
   name: "Amoxicilline",
-  NR: "Remboursable"
+  # NR: "Remboursable"
 )
 
 medicine5 = Medicine.create(
   name: "Aspirine",
-  NR: "Remboursable"
+  # NR: "Remboursable"
 )
 
 medicine6 = Medicine.create(
   name: "Allergoflash",
-  NR: "Non-Remboursable"
+  # NR: "Non-Remboursable"
 )
 
 puts "#{Medicine.count} medicines created"
