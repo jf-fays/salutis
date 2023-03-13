@@ -3,6 +3,7 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 
+
 $("select").select2({
   theme: "bootstrap-5",
   containerCssClass: "select2--large", // For Select2 v4.0
