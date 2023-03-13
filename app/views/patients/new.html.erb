@@ -11,7 +11,7 @@
         <%= f.input :pathology, placeholder: "ALD" %>
         <%= f.input :height, placeholder: "Taille en cm" %>
         <%= f.input :weight, placeholder: "Poids en kg" %>
-        <%= f.input :gender, placeholder: "Masculin / Féminin" %>
+        <%= f.input :gender, :collection => ["masculin", "féminin"] %>
         <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit "Create patient", class: "btn btn-primary" %>
       <% end %>
