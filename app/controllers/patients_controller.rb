@@ -7,6 +7,9 @@ class PatientsController < ApplicationController
 
   def show
     # find_user
+    @consultations = @patient.consultations
+        # if params[:consulation].present?
+
   end
 
   def edit

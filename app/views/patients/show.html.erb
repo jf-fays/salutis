@@ -4,3 +4,20 @@
   <%= link_to 'Consultation', new_patient_consultation_path(@patient.id), class: "btn btn-primary" %>
   <%= link_to 'Editer profil', edit_patient_path(@patient.id) , class: "btn btn-primary" %>
 </div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8">
+    <div class="card-product">
+      <% @consultations.each do |consultation| %>
+        <%= link_to consultation_path(consultation.id) do %>
+          <div class="card-product-infos">
+              <%= image_tag "ordonnance_test.png" %>
+            <p>Sujet : <%= consultation.title %></p>
+            <p><%= consultation.ald %></p>
+            <p>Compte-rendu : <%= consultation.content %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
