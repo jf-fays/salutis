@@ -3,7 +3,7 @@
 
  <%= simple_form_for @medicine do |f| %>
         <%= f.input :name, placeholder: "Name" %>
-        <%= f.input :NR, placeholder: "Refundable/NonRefundable" %>
+        <%# <%= f.input :NR, placeholder: "Refundable/NonRefundable" %>
         <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit "Create medicine", class: "btn btn-primary" %>
       <% end %>
