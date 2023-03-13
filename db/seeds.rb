@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# User.destroy_all
-# Patient.destroy_all
-# DailyTake.destroy_all
+User.destroy_all
+Patient.destroy_all
+DailyTake.destroy_all
 # Medicine.destroy_all
-#MedicalProcedure.destroy_all
+MedicalProcedure.destroy_all
 
 patient1 = Patient.create(
   first_name: "John",
@@ -127,38 +127,52 @@ end
 
 puts "#{DailyTake.count} daily_takes created"
 
-medicine1 = Medicine.create(
-  name: "Doliprane",
-  NR: "Remboursable"
-)
+# medicine1 = Medicine.create(
+#   name: "Doliprane",
+#   NR: "Remboursable"
+# )
 
-medicine2 = Medicine.create(
-  name: "Advil",
-  NR: "Remboursable"
-)
+# medicine2 = Medicine.create(
+#   name: "Advil",
+#   NR: "Remboursable"
+# )
 
-medicine3 = Medicine.create(
-  name: "Maxilase",
-  NR: "Non-Remboursable"
-)
+# medicine3 = Medicine.create(
+#   name: "Maxilase",
+#   NR: "Non-Remboursable"
+# )
 
-medicine4 = Medicine.create(
-  name: "Amoxicilline",
-  NR: "Remboursable"
-)
+# medicine4 = Medicine.create(
+#   name: "Amoxicilline",
+#   NR: "Remboursable"
+# )
 
-medicine5 = Medicine.create(
-  name: "Aspirine",
-  NR: "Remboursable"
-)
+# medicine5 = Medicine.create(
+#   name: "Aspirine",
+#   NR: "Remboursable"
+# )
 
-medicine6 = Medicine.create(
-  name: "Allergoflash",
-  NR: "Non-Remboursable"
-)
+# medicine6 = Medicine.create(
+#   name: "Allergoflash",
+#   NR: "Non-Remboursable"
+# )
+
+
+
+# require 'csv'
+
+# CSV.foreach(Rails.root.join('lib/seed_scv/medecines.csv'), headers: true) do |row|
+#   m = Medicine.create!({
+#     name: row["name"],
+#     form: row["type"],
+#     auth: row["auth"],
+#     nr: false,
+#     registration_number: row['num']
+#     })
+#   p m.name
+# end
 
 puts "#{Medicine.count} medicines created"
-
 # medical_procedure1 = MedicalProcedure.create(
 #   content: "réfection d’un pansement simple au domicile par une infirmière libérale jusqu’à guérison complète"
 # )
