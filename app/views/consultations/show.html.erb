@@ -1,7 +1,7 @@
 <h1>Mes consultations</h1>
 <div class="container">
     <%= simple_form_for [@consultation, @prescription] do |f| %>
-        <%= f.submit "Nouvelle prescription", class: "btn btn-primary" %>
+        <%= f.submit "Nouvelle prescription", class: "btn-grad font" %>
     <% end %>
 
 
@@ -11,8 +11,24 @@
           <%= image_tag "ordonnance_test.png" %>
           <div class = "text-group">
             <p><%= @consultation.created_at %></p>
-            <h6><%= @consultation.title %></h6>
+            <h4><%= @consultation.title %></h4>
             <p><strong><%= @consultation.content %></strong></p>
+          </div>
+            <%= image_tag "3-dots-icon.png", id: "dots" %>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="card-product">
+        <div class="card-product-infos">
+          <%= image_tag "ordonnance_test.png" %>
+          <div class = "text-group">
+            <% @consultation.prescriptions.each do |n| %>
+              <p><%= n.created_at %></p>
+              <h4><%=  %></h4>
+            <% end %>
+            <%# <p><strong>= @consultation.prescription</strong></p> %>
           </div>
             <%= image_tag "3-dots-icon.png", id: "dots" %>
         </div>

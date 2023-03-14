@@ -1,16 +1,22 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500&family=Roboto:wght@300;400;500;700&display=swap');
 
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
+$title-font: 'Open Sans', sans-serif;
+$text-font: 'Montserrat', sans-serif;
+$regular-font: 'Merriweather', serif;
+$test-font: 'Roboto', sans-serif;;
+
 // To use a font file (.woff) uncomment following lines
 @font-face {
-  font-family: "Old London";
-  src: font-url('OldLondon') format("truetype");
+  font-family: "Chemistry";
+  src: font-url('Chemistry') format("truetype");
        font-style: normal;
-       font-weight: 400;
+       font-weight: 600;
        font-display: swap;
 }
-$OldLondon: "Old London";
+$Chemistry: "Chemistry";
