@@ -3,7 +3,7 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 
-audio
+// audio
 let button = document.getElementById("click_to_convert");
 let content = document.getElementById("message_content");
 
