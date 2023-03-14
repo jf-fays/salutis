@@ -26,6 +26,7 @@ button.addEventListener('click', function() {
     recognition.start();
   }
 
+
 // search select2
 $("select").select2({
   theme: "bootstrap-5",
