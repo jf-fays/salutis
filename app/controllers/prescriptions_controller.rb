@@ -4,6 +4,17 @@ class PrescriptionsController < ApplicationController
   def show
     @medical_procedure = MedicalProcedure.new
     @prescription_medicine = PrescriptionMedicine.new
+    # respond_to do |format|
+    #   format.html { render :show }
+    #   format.pdf {
+    #     render :pdf => "show", :layout => 'pdf.html'
+    #   }
+      respond_to do |format|
+        format.html
+        format.pdf do
+          render pdf: "Prescription n: #{@prescription.id}", template: "prescriptions/show.html.erb"   # Excluding ".pdf" extension.
+        end
+      end
   end
 
   def new
