@@ -8,7 +8,7 @@
     </div>
     <%= simple_form_for [@prescription, @medical_procedure] do |f| %>
         <%= f.input :content %>
-        <%= f.submit "Ajouter une procédure", class: "btn btn-primary" %>
+        <%= f.submit "Ajouter une procédure", class: "btn-grad font" %>
     <% end %>
 
     <div>
@@ -29,7 +29,7 @@
         </div>
         <%= f.input :duration %>
         <%= f.input :dosage %>
-        <%= f.submit "Ajouter une prescription", class: "btn btn-primary" %>
+        <%= f.submit "Ajouter une prescription", class: "btn-grad font" %>
     <% end %>
 
-<%= link_to 'Acceuil', root_path, class: "btn btn-primary" %>
+<%= link_to 'Acceuil', root_path, class: "btn-grad font" %>

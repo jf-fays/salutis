@@ -1,0 +1,34 @@
+// $body-font: "Work Sans", "Helvetica", "sans-serif";
+// $headers-font: "Nunito", "Helvetica", "sans-serif";
+
+// $text-font: 'Montserrat', sans-serif;
+// $title-font: 'Roboto', sans-serif;
+// $regular-font: 'Space Mono', monospace;
+
+// @font-face {
+//   font-family: "Chemistry";
+//   src: font-url('Chemistry') format("truetype");
+//        font-style: normal;
+//        font-weight: 600;
+//        font-display: swap;
+// }
+// $Chemistry: "Chemistry";
+
+.font {
+  font-family: $text-font;
+  font-weight: 400;
+}
+
+h2{
+  font-family: $title-font;
+  font-weight: 500;
+}
+
+h6 {
+  padding: 0px 8px;
+  font-family: $regular-font;
+}
+
+p {
+  font-family: $text-font;
+}

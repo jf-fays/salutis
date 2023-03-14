@@ -33,6 +33,7 @@ a {
 .card-product .card-product-infos {
   overflow: hidden;
   height: 120px;
+  height: fit-content;
   width: 70%;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -46,11 +47,7 @@ a {
   border-radius: 8px;
 }
 
-h6 {
-  padding: 0px 8px;
-  font-family: $OldLondon;
-}
-
 .text-group {
   max-width: fit-content;
+  // font-size: 16px;
 }
