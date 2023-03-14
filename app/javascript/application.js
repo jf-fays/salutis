@@ -3,35 +3,11 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 
-// audio
-let button = document.getElementById("click_to_convert");
-let content = document.getElementById("message_content");
+import { Turbo } from "@hotwired/turbo-rails"
+Turbo.session.drive = false
 
-button.addEventListener('click', function() {
-  const SpeechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
-  var speech = true;
-  const recognition = new SpeechRecognition();
-  recognition.interimResults = true;
-  const contentValue = content.value;
+import { audioRecord } from "./components/audio_record";
+import { select2 } from "./components/select2";
 
-  recognition.addEventListener('result', e=>{
-    const transcript = Array.from(e.results)
-    .map(result => result[0])
-    .map(result => result.transcript)
-
-    content.value = contentValue + " " + transcript;
-  })
-
-  if(speech == true){
-    recognition.start();
-  }
-});
-
-
-// search select2
-$("select").select2({
-  theme: "bootstrap-5",
-  containerCssClass: "select2--large", // For Select2 v4.0
-  selectionCssClass: "select2--large", // For Select2 v4.1
-  dropdownCssClass: "select2--large",
-});
+audioRecord()
+select2()
