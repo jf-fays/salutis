@@ -25,6 +25,7 @@ button.addEventListener('click', function() {
   if(speech == true){
     recognition.start();
   }
+});
 
 
 // search select2
